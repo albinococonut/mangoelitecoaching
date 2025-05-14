@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Received - Mango Elite Coaching</title>
+    <link rel="icon" href="favicon.png" type="image/png">    
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #333333;
+            --accent: #ff0099;
+            --light: #f8fafc;
+            --dark: #0f172a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 80px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            margin-bottom: 50px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            width: 100px;
+            background-color: #000000;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        
+        .program-title {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin: 0 auto 25px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--accent);
+            max-width: 800px;
+            display: block;
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .thanks-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin: -30px auto 50px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .thanks-badge {
+            background-color: var(--accent);
+            color: white;
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(255, 0, 153, 0.3);
+        }
+        
+        .thanks-emoji {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin: 30px 0 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .benefits {
+            margin: 25px 0;
+            padding-left: 20px;
+        }
+        
+        .benefits li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 30px;
+            list-style-type: none;
+        }
+        
+        .benefits li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .phone {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: rgba(255, 0, 153, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .signature {
+            font-weight: 600;
+            margin-top: 30px;
+            font-style: italic;
+        }
+        
+        .home-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .home-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(255, 0, 153, 0.3);
+            background-color: #e6008c;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .thanks-badge {
+                font-size: 1.2rem;
+                padding: 8px 20px;
+            }
+            
+            .thanks-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="200pink.png" alt="Mango Elite Coaching Logo" style="width: 100px; height: 100px;">
+            </div>
+            <h3 class="program-title">Mango Elite Coaching</h3>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="thanks-container">
+            <span class="thanks-badge">You're In! 🚀</span>
+            
+            <h1>Application Received & Ready for Fast-Track Review</h1>
+            
+            <p><strong>Congratulations on taking the first bold step toward freedom!</strong> Your application for the ultra-exclusive Mango Elite Coaching program has been submitted successfully.</p>
+            
+            <h2>What Happens Next:</h2>
+            
+            <p>Within 48 hours, our team will personally review your shop's details to determine if you're among the select few who can truly benefit from our proven 50% growth system.</p>
+            
+            <p><strong>The clock is ticking...</strong> With only 12 spots available, our review process moves quickly. Qualified shop owners will receive a priority call to schedule your <strong>FREE 30-minute Freedom Strategy Session</strong>.</p>
+            
+            <h2>Your Shop Could Be Next:</h2>
+            
+            <ul class="benefits">
+                <li>60-hour workweeks → just 5 hours in-shop</li>
+                <li>Stagnant growth → 52% revenue increase</li>
+                <li>Constant firefighting → systems that run without you</li>
+            </ul>
+            
+            <h2>Didn't Hear From Us?</h2>
+            
+            <p>If 48 hours pass without contact, don't miss your opportunity — call us directly at <span class="phone">(505) 441-4779</span> to fast-track your application.</p>
+            
+            <div class="quote">
+                <p>The question isn't whether your shop can grow 50% this year...</p>
+                <p>The question is: Are you ready to do it while working just 5 hours a week?</p>
+            </div>
+            
+            <p class="signature">— The Mango Elite Team</p>
+            
+            <a href="index.html" class="home-button">Return to Homepage</a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Mango Elite Coaching. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
