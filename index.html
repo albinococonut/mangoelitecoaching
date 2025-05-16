@@ -299,14 +299,25 @@
             border-radius: 8px;
             margin: 20px 0;
             border: 1px dashed var(--accent);
+            position: relative;
         }
         
         .guarantee h3 {
             color: var(--accent);
+            display: flex;
+            align-items: center;
         }
         
         .guarantee p {
             font-weight: 500;
+        }
+        
+        /* ADDED: Styling for the guarantee icon */
+        .guarantee-icon {
+            margin-right: 10px;
+            width: 24px;
+            height: 24px;
+            fill: var(--accent);
         }
 
         @media (max-width: 768px) {
@@ -390,12 +401,20 @@
                 <p>Pay upfront for the year and save 10% savings</p>
             </div>
             
-            <!-- NEW GUARANTEE BOX -->
+            <!-- UPDATED GUARANTEE BOX WITH ICON -->
             <div class="guarantee">
-                <h3 class="heading-secondary">Our Iron-Clad Guarantee:</h3>
-                 <p>We're so confident in our system that we offer a risk-free guarantee: Fully engage in the program by completing all homework assignments, attending all calls, and implementing <strong>ALL</strong> our strategies. If you don't see a minimum 20% revenue growth within the first 12 months, you'll receive a <strong>FULL REFUND</strong> of your investment. No questions asked. No hidden conditions. We only succeed when you do.</p>
-  <p><p></p></p>Our average client sees 50%+ revenue growth, but we guarantee at least 20% revenue growth— or your money back. That's how committed we are to your success.</p>
-</div>
+                <h3 class="heading-secondary">
+                    <!-- Added shield icon for Iron-Clad Guarantee -->
+                    <svg class="guarantee-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4.68L18 9v2.92c0 3.9-2.69 7.52-6 8.55-3.31-1.02-6-4.65-6-8.55V9l6-3.32z"/>
+                        <path d="M9 12l2 2 4-4" stroke="#ff0099" stroke-width="2" fill="none"/>
+                    </svg>
+                    Our Iron-Clad Guarantee:
+                </h3>
+                <p>We're so confident in our system that we offer a risk-free guarantee: Fully engage in the program by completing all homework assignments, attending all calls, and implementing <strong>ALL</strong> our strategies. If you don't see a minimum 20% revenue growth within the first 12 months, you'll receive a <strong>FULL REFUND</strong> of your investment. No questions asked. No hidden conditions. We only succeed when you do.</p>
+                <p><br>Our average client sees 50%+ revenue growth, but we guarantee at least 20% revenue growth— or your money back. That's how committed we are to your success.</p>
+            </div>
+        </div>
         
         <div class="phase">
             <div class="phase-header">
@@ -410,14 +429,14 @@
                 <li><strong>We run the show:</strong> Our team manages marketing, recruiting, and sales training for you</li>
                 <li><strong>Skin-in-the-game:</strong> We only get paid on the profit we drive—so your 5-hr workweek is guaranteed to pay off</li>
                 <li><strong>Quarterly sprints & VIP calls:</strong> High-impact workshops and direct access to our founders to crush any remaining time-sinks</li>
-                      <div class="investment">
+            </ul>
+            
+            <div class="investment">
                 <h3 class="heading-secondary">Investment:</h3>
-                <p>Done for you: A la carte marketing, recruiting and sales execution to get you to a 5 hour workweek. </p> Plus a profit-only share: 100% baseline valuation stays with you; every dollar above is 60/40 in your favor.
+                <p>Done for you: A la carte marketing, recruiting and sales execution to get you to a 5 hour workweek. </p> 
+                <p>Plus a profit-only share: 100% baseline valuation stays with you; every dollar above is 60/40 in your favor.</p>
             </div>
-
         </div>
-
-</ul>
         
         <div class="phase">
             <div class="phase-header">
@@ -462,9 +481,9 @@
             <p>Fill out the form below to begin your journey to greater freedom and growth.</p>
             
             <form action="https://formspree.io/f/xkgrkrwq" method="POST">
-    <input type="hidden" name="_next" value="https://mangoelitecoaching.com/thanks.html">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="New Mango Elite Application">
+                <input type="hidden" name="_next" value="https://mangoelitecoaching.com/thanks.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Mango Elite Application">
                 <div class="form-group">
                     <label for="name">Your Name *</label>
                     <input type="text" id="name" name="name" required>
