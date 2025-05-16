@@ -533,6 +533,33 @@
                     <label for="previous-profit">Previous Year's Profit *</label>
                     <input type="text" id="previous-profit" name="previous-profit" required>
                 </div>
+
+<div class="form-group">
+    <label for="availability">What days and times generally work best for your participation in our coaching cohort? This helps us plan, but is not a final commitment. (Select all that apply) *</label>
+    <div style="margin-top: 10px;">
+        <label style="font-weight: normal; display: block; margin-bottom: 8px;">
+            <input type="checkbox" name="availability[]" value="Weekday mornings"> Weekday mornings
+        </label>
+        <label style="font-weight: normal; display: block; margin-bottom: 8px;">
+            <input type="checkbox" name="availability[]" value="Weekday afternoons"> Weekday afternoons
+        </label>
+        <label style="font-weight: normal; display: block; margin-bottom: 8px;">
+            <input type="checkbox" name="availability[]" value="Weekday evenings"> Weekday evenings
+        </label>
+        <label style="font-weight: normal; display: block; margin-bottom: 8px;">
+            <input type="checkbox" name="availability[]" value="Weekend availability"> Weekend availability
+        </label>
+        <label style="font-weight: normal; display: block; margin-bottom: 8px;">
+            <input type="checkbox" name="availability[]" value="Flexible/can adjust my schedule as needed"> Flexible/can adjust my schedule as needed
+        </label>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="scheduling-notes">Anything else we should know about your scheduling preferences?</label>
+    <textarea id="scheduling-notes" name="scheduling-notes"></textarea>
+</div>
+
                 
                 <button type="submit" class="submit-button">Submit Application</button>
             </form>
