@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,6 +92,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin-right: 20px;
+            flex-shrink: 0;
         }
         
         .phase-title {
@@ -182,14 +182,16 @@
             justify-content: center;
             margin: 0 auto 30px;
             width: 100px;
+            height: 100px;
             background-color: #000000;
             border-radius: 50%;
             padding: 10px;
         }
         
-        .logo svg {
-            width: 100%;
-            height: auto;
+        .logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
             filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.2));
         }
         
@@ -267,6 +269,21 @@
             resize: vertical;
         }
         
+        .checkbox-group {
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            font-weight: normal !important;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+        
         .submit-button {
             background-color: var(--accent);
             color: white;
@@ -277,6 +294,7 @@
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
+            width: 100%;
         }
         
         .submit-button:hover {
@@ -318,8 +336,8 @@
             height: 24px;
             fill: var(--accent);
         }
-
-        /* NEW STYLES FOR SYSTEM, CASE STUDIES, AND FOUNDER BIOS */
+        
+        /* System, Case Studies, and Founder Bio Styles */
         .system-container {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
@@ -454,77 +472,6 @@
             color: var(--primary);
         }
         
-        .founders {
-            background: var(--light);
-            padding: 60px 0;
-            margin: 50px 0;
-        }
-        
-        .founders-title {
-            text-align: center;
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-        
-        .founders-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: var(--secondary);
-        }
-        
-        .founders-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-        
-        .founder {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .founder-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            border: 4px solid var(--accent);
-        }
-        
-        .founder-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .founder-name {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-        
-        .founder-title {
-            font-size: 1rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .founder-bio {
-            text-align: left;
-            line-height: 1.6;
-            color: var(--secondary);
-        }
-        
         .empire-stats {
             background: linear-gradient(135deg, var(--accent) 0%, #e6008c 100%);
             color: white;
@@ -561,7 +508,7 @@
             font-size: 0.9rem;
             opacity: 0.9;
         }
-
+        
         @media (max-width: 768px) {
             .headline {
                 font-size: 1.8rem;
@@ -579,6 +526,17 @@
                 font-size: 1.5rem;
             }
             
+            .phase-header {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+            
+            .phase-icon {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+            
             .floating-cta {
                 bottom: 20px;
                 right: 20px;
@@ -593,12 +551,12 @@
                 grid-template-columns: 1fr;
             }
             
-            .founders-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .empire-stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .container {
+                padding: 0 15px;
             }
         }
     </style>
@@ -611,7 +569,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="200pink.png" alt="Mango Elite Coaching Logo" style="width: 100px; height: 100px;">
+                <img src="200pink.png" alt="Mango Elite Coaching Logo">
             </div>
             <h3 class="program-title">Mango Elite Coaching</h3>
             <h1 class="headline">Imagine Running Your Shop in Just <span class="highlight">5 Hours a Week</span> — While Growing Revenue by <span class="highlight">50%+</span></h1>
@@ -782,7 +740,7 @@
             
             <div class="investment">
                 <h3 class="heading-secondary">Investment:</h3>
-                <p>$1,800/mo (month-to-month)</p>
+                <p><strong>$1,800/mo (month-to-month)</strong></p>
                 <p>Pay upfront for the year and save 10%</p>
             </div>
             
@@ -795,7 +753,7 @@
                     Our Iron-Clad Guarantee:
                 </h3>
                 <p>We're so confident in our system that we offer a risk-free guarantee: Fully engage in the program by completing all homework assignments, attending all calls, and implementing ALL our strategies. If you don't see a minimum 20% revenue growth within the first 12 months, we will work with you for FREE until you hit that goal. No questions asked. No hidden conditions. We only succeed when you do.</p>
-                <p><br>Our average client sees 50%+ revenue growth, but we guarantee at least 20% revenue growth— or we will keep working with you until you do. That's how committed we are to your success.</p>
+                <p>Our average client sees 50%+ revenue growth, but we guarantee at least 20% revenue growth— or we will keep working with you until you do. That's how committed we are to your success.</p>
             </div>
         </div>
         
@@ -816,8 +774,8 @@
             
             <div class="investment">
                 <h3 class="heading-secondary">Investment:</h3>
-                <p>Done for you: A la carte marketing, recruiting and sales execution to get you to a 5 hour workweek. </p> 
-                <p>Plus a profit-only share: 100% baseline valuation stays with you; every dollar above is 60/40 in your favor.</p>
+                <p><strong>Done for you:</strong> A la carte marketing, recruiting and sales execution to get you to a 5 hour workweek.</p> 
+                <p><strong>Plus a profit-only share:</strong> 100% baseline valuation stays with you; every dollar above is 60/40 in your favor.</p>
             </div>
         </div>
         
@@ -831,7 +789,7 @@
             
             <h3 class="heading-secondary">Your Gain:</h3>
             <ul class="feature-list">
-                <li>Profit-Only Option: 100% baseline valuation stays with you; every dollar above is 60/40 in your favor</li>
+                <li><strong>Profit-Only Option:</strong> 100% baseline valuation stays with you; every dollar above is 60/40 in your favor</li>
                 <li><strong>White-glove M&A support:</strong> Buyer positioning, deal structuring, and retirement planning—so you step away stress-free</li>
                 <li><strong>License our brand & systems:</strong> Keep that 5-hour freedom alive for whoever runs your shop next</li>
             </ul>
@@ -867,6 +825,7 @@
                 <input type="hidden" name="_next" value="https://mangoelitecoaching.com/thanks.html">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="New Mango Elite Application">
+                
                 <div class="form-group">
                     <label for="name">Your Name *</label>
                     <input type="text" id="name" name="name" required>
@@ -916,33 +875,32 @@
                     <label for="previous-profit">Previous Year's Profit *</label>
                     <input type="text" id="previous-profit" name="previous-profit" required>
                 </div>
-
-<div class="form-group">
-    <label for="availability">What days and times generally work best for your participation in our coaching cohort? This helps us plan, but is not a final commitment. (Select all that apply) *</label>
-    <div style="margin-top: 10px;">
-        <label style="font-weight: normal; display: block; margin-bottom: 8px;">
-            <input type="checkbox" name="availability[]" value="Weekday mornings"> Weekday mornings
-        </label>
-        <label style="font-weight: normal; display: block; margin-bottom: 8px;">
-            <input type="checkbox" name="availability[]" value="Weekday afternoons"> Weekday afternoons
-        </label>
-        <label style="font-weight: normal; display: block; margin-bottom: 8px;">
-            <input type="checkbox" name="availability[]" value="Weekday evenings"> Weekday evenings
-        </label>
-        <label style="font-weight: normal; display: block; margin-bottom: 8px;">
-            <input type="checkbox" name="availability[]" value="Weekend availability"> Weekend availability
-        </label>
-        <label style="font-weight: normal; display: block; margin-bottom: 8px;">
-            <input type="checkbox" name="availability[]" value="Flexible/can adjust my schedule as needed"> Flexible/can adjust my schedule as needed
-        </label>
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="scheduling-notes">Anything else we should know about your scheduling preferences?</label>
-    <textarea id="scheduling-notes" name="scheduling-notes"></textarea>
-</div>
-
+                
+                <div class="form-group">
+                    <label for="availability">What days and times generally work best for your participation in our coaching cohort? This helps us plan, but is not a final commitment. (Select all that apply) *</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="availability[]" value="Weekday mornings"> Weekday mornings
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="availability[]" value="Weekday afternoons"> Weekday afternoons
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="availability[]" value="Weekday evenings"> Weekday evenings
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="availability[]" value="Weekend availability"> Weekend availability
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="availability[]" value="Flexible/can adjust my schedule as needed"> Flexible/can adjust my schedule as needed
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="scheduling-notes">Anything else we should know about your scheduling preferences?</label>
+                    <textarea id="scheduling-notes" name="scheduling-notes"></textarea>
+                </div>
                 
                 <button type="submit" class="submit-button">Submit Application</button>
             </form>
