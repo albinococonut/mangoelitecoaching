@@ -645,19 +645,41 @@
         
         /* Enhanced CTA - More Urgent */
         .cta-container {
-            text-align: center;
-            padding: 60px 0;
-            background: var(--gray-100);
-            border-radius: 20px;
-            margin: 40px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-container h2 {
-            text-align: center;
-            margin: 0 auto 20px;
-            max-width: 800px;
-        }
+    text-align: center !important; /* Force center alignment */
+    padding: 60px 20px; /* Add horizontal padding */
+    background: var(--gray-100);
+    border-radius: 20px;
+    margin: 40px auto; /* Center the container itself */
+    max-width: 1000px; /* Constrain width */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Flexbox centering */
+    justify-content: center;
+}
+
+.cta-container * {
+    text-align: center !important; /* Force all children to center */
+}
+
+.cta-container h2 {
+    text-align: center !important;
+    margin: 0 auto 20px !important;
+    max-width: 800px;
+    width: 100%;
+    display: block;
+}
+
+.cta-text {
+    font-size: 1.1rem;
+    margin: 20px auto;
+    font-weight: 500;
+    text-align: center !important;
+    max-width: 600px;
+    width: 100%;
+    display: block;
+}
         
         .limited-offer {
             display: inline-block;
