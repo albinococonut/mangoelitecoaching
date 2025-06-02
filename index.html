@@ -160,13 +160,33 @@
             text-align: center;
         }
         
-        .proof-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+.proof-stats {
+    display: grid;
+    /* Desktop: 4 items in one row */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 900px; /* Reduced to keep items closer together */
+    margin: 0 auto;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 900px) {
+    .proof-stats {
+        /* Tablet: 2x2 grid */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .proof-stats {
+        /* Mobile: stack vertically */
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 300px;
+    }
+}
         
         .proof-stat {
             padding: 20px;
