@@ -916,6 +916,235 @@
                 grid-template-columns: 1fr;
             }
         }
+
+/* Why Section Styles - Add to existing CSS */
+.why-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #f8fafc 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 Q50,5 80,20 Q95,50 80,80 Q50,95 20,80 Q5,50 20,20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></svg>');
+    background-size: 200px 200px;
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.why-content {
+    position: relative;
+    z-index: 2;
+}
+
+.why-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.why-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.why-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.why-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.story-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.story-icon {
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.story-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.story-card blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--gray-700);
+    border-left: 4px solid var(--accent);
+    padding-left: 20px;
+    margin: 20px 0;
+    background: rgba(255, 0, 102, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.pain-points {
+    margin-top: 25px;
+}
+
+.pain-point {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.pain-icon {
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+.promise-grid {
+    margin: 25px 0;
+}
+
+.promise-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: rgba(255, 0, 102, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 0, 102, 0.1);
+}
+
+.promise-header {
+    display: flex;
+    align-items: center;
+    color: var(--gray-700);
+}
+
+.promise-icon {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.vs {
+    font-weight: 900;
+    color: var(--accent);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mission-statement {
+    margin-top: 25px;
+    padding: 20px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.mission-statement p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.transformation-arrow {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.arrow-content {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
+
+.arrow {
+    margin-left: 15px;
+    font-size: 1.5rem;
+    color: var(--accent);
+    animation: bounce-right 2s infinite;
+}
+
+@keyframes bounce-right {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(0); }
+    40% { transform: translateX(10px); }
+    60% { transform: translateX(5px); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .why-story {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .why-title {
+        font-size: 2rem;
+    }
+    
+    .story-card {
+        padding: 25px;
+    }
+    
+    .promise-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .vs {
+        order: 2;
+    }
+    
+    .arrow-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+        
     </style>
 </head>
 <body>
@@ -967,6 +1196,103 @@
     </div>
     
     <div class="main-content">
+
+        <!-- WHY WE CREATED MANGO ELITE SECTION -->
+<div class="why-section">
+    <div class="container">
+        <div class="why-content">
+            <div class="why-header">
+                <h2 class="why-title">Why We Created Mango Elite</h2>
+                <p class="why-subtitle">The heartbreaking reality that sparked our mission</p>
+            </div>
+            
+            <div class="why-story">
+                <div class="problem-side">
+                    <div class="story-card">
+                        <div class="story-icon">💔</div>
+                        <h3>The Devastating Pattern We Kept Seeing</h3>
+                        <blockquote>
+                            "Over the years, we met too many shop owners with the same devastating story: decades of blood, sweat, and tears poured into their business, only to discover they weren't profitable enough to sell for an amount that would sustain their retirement."
+                        </blockquote>
+                        <div class="pain-points">
+                            <div class="pain-point">
+                                <span class="pain-icon">⚙️</span>
+                                <span>Trapped by antiquated systems</span>
+                            </div>
+                            <div class="pain-point">
+                                <span class="pain-icon">👥</span>
+                                <span>Poor hiring practices</span>
+                            </div>
+                            <div class="pain-point">
+                                <span class="pain-icon">😰</span>
+                                <span>Lost passion for the business</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="solution-side">
+                    <div class="story-card">
+                        <div class="story-icon">🚀</div>
+                        <h3>Our Promise: No More Shop Owner Casualties</h3>
+                        <p>We created Mango Elite because every shop owner deserves to build something truly valuable—not just a job that owns them, but a profitable business that serves them.</p>
+                        
+                        <div class="promise-grid">
+                            <div class="promise-item">
+                                <div class="promise-header">
+                                    <span class="promise-icon">📈</span>
+                                    <strong>Growing Revenue</strong>
+                                </div>
+                                <span class="vs">OR</span>
+                                <div class="promise-header">
+                                    <span class="promise-icon">🏡</span>
+                                    <strong>Having a Life</strong>
+                                </div>
+                            </div>
+                            <div class="promise-item">
+                                <div class="promise-header">
+                                    <span class="promise-icon">💰</span>
+                                    <strong>Being Profitable</strong>
+                                </div>
+                                <span class="vs">OR</span>
+                                <div class="promise-header">
+                                    <span class="promise-icon">👨‍👩‍👧‍👦</span>
+                                    <strong>Being Present</strong>
+                                </div>
+                            </div>
+                            <div class="promise-item">
+                                <div class="promise-header">
+                                    <span class="promise-icon">🏢</span>
+                                    <strong>Building Value</strong>
+                                </div>
+                                <span class="vs">OR</span>
+                                <div class="promise-header">
+                                    <span class="promise-icon">🧠</span>
+                                    <strong>Maintaining Sanity</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mission-statement">
+                            <p><strong>Because the automotive community deserves better than the "work until you burn out" model that's claimed too many passionate professionals.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="transformation-arrow">
+                <div class="arrow-content">
+                    <span>Ready to write a different ending to your story?</span>
+                    <div class="arrow">→</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        
         <!-- MANGO ELITE SYSTEM SECTION -->
         <div class="system-container">
             <div class="container">
