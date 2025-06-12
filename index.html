@@ -1263,6 +1263,111 @@
     60% { transform: translateX(5px); }
 }
 
+        /* Shop Tours & 1-on-1 Support Section */
+.shop-tours-section {
+    background: white;
+    padding: 60px 0;
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.tours-content {
+    position: relative;
+    z-index: 2;
+}
+
+.tours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tour-card,
+.support-card {
+    background: var(--gray-100);
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border: 2px solid var(--gray-200);
+    position: relative;
+}
+
+.tour-card:hover,
+.support-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+}
+
+.tour-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 16px 16px 0 0;
+}
+
+.support-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-dark);
+    border-radius: 16px 16px 0 0;
+}
+
+.tour-icon,
+.support-icon {
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tour-card h3,
+.support-card h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.tour-card p,
+.support-card p {
+    color: var(--gray-700);
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: left;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .tours-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .tour-card,
+    .support-card {
+        padding: 25px;
+    }
+    
+    .tour-card h3,
+    .support-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .why-story {
@@ -1442,7 +1547,26 @@
     </div>
 </div>
 
-
+<!-- SHOP TOURS & 1-ON-1 SUPPORT SECTION -->
+<div class="shop-tours-section">
+    <div class="container">
+        <div class="tours-content">
+            <div class="tours-grid">
+                <div class="tour-card">
+                    <div class="tour-icon">🏢</div>
+                    <h3>See Rapid Growth and Hands-Off Ownership in Action</h3>
+                    <p>Don't just take our word for it—experience what 50%+ growth with a 5-hour workweek actually looks like. Tour one of our successful mango shops in Arizona, Texas, or New Mexico and witness firsthand how our proven systems create true business freedom. See the operations running smoothly, meet the teams we've helped build, and discover the exact strategies that transformed these businesses.</p>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">📞</div>
+                    <h3>Complete 1-on-1 Support When You Need It Most</h3>
+                    <p>Your success is our priority, which is why every member gets direct access to personalized guidance through 1-on-1 calls, text support, and urgent meetings when critical decisions arise. No waiting for the next group session—get immediate expert guidance tailored to your specific challenges and opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
         
         <!-- MANGO ELITE SYSTEM SECTION -->
