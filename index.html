@@ -1398,12 +1398,54 @@
         gap: 10px;
     }
 }
+.mango-floating-testimonial {
+    position: fixed;
+    right: 30px;
+    top: 22%;
+    width: 420px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: var(--shadow-xl);
+    z-index: 1001;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.6s ease;
+    font-family: 'Inter', sans-serif;
+}
 
+.mango-floating-testimonial.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.testimonial-opener { font-size: 1.3rem; font-weight: 600; color: var(--primary); margin-bottom: 20px; }
+.testimonial-highlight-box { background: var(--gradient-primary); color: white; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center; }
+.testimonial-amount { font-size: 2.2rem; font-weight: 900; }
+.testimonial-body { color: var(--gray-700); margin-bottom: 20px; line-height: 1.6; }
+.testimonial-cta { width: 100%; background: var(--gradient-primary); color: white; border: none; padding: 16px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+
+@media (max-width: 768px) {
+    .mango-floating-testimonial { bottom: 20px; left: 20px; right: 20px; width: auto; top: auto; transform: translateY(100%); }
+    .mango-floating-testimonial.show { transform: translateY(0); }
+}
 
         
     </style>
 </head>
 <body>
+<div class="mango-floating-testimonial" id="testimonial">
+    <div class="testimonial-opener">"Working with Mango Elite Coaching was one of the best business decisions I've made."</div>
+    <div class="testimonial-highlight-box">
+        <div class="testimonial-amount">💰 $220,000</div>
+        <div>added in 7 weeks</div>
+    </div>
+    <div class="testimonial-body">"They didn't just throw theory at us—they rolled up their sleeves and helped us make smart, fast changes that moved the needle. Super sharp team, real-world advice, and crazy fast ROI. If you're looking for actual results, not just advice, these guys deliver."</div>
+    <div style="text-align: right; margin: 20px 0; color: var(--gray-700); font-size: 0.9rem;">— Alex Kahn, Rio Grande Automotive</div>
+    <button class="testimonial-cta">📹 Watch Video</button>
+</div>
+
     <!-- Urgency Bar -->
     <div class="urgency-bar">
         🔥 ONLY 3 SPOTS LEFT - Applications Close July 1st
@@ -2026,6 +2068,14 @@
         
         updateCountdown();
         setInterval(updateCountdown, 1000);
+
+window.addEventListener('scroll', function() {
+    const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+    if (scrollPercent > 15) {
+        document.getElementById('testimonial').classList.add('show');
+    }
+});
+
     </script>
 </body>
 </html>
