@@ -1053,13 +1053,13 @@
 }
         
         /* Floating CTA - More Urgent */
-        .floating-cta {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 1000;
-            animation: urgent-bounce 2s infinite;
-        }
+    .floating-cta {
+    position: fixed;
+    bottom: 200px;  /* Moved above testimonial */
+    right: 25px;
+    z-index: 1000;
+    animation: urgent-bounce 2s infinite;
+}
         
         @keyframes urgent-bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0) scale(1); }
