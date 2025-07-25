@@ -506,15 +506,15 @@
             box-shadow: var(--shadow-md);
         }
         
-        .founder-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent);
-            margin: 0 auto 20px;
-            display: block;
-        }
+.founder-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    margin: 0 auto 20px;
+    display: block;
+}
         
         .founder-name {
             font-size: 1.4rem;
@@ -964,6 +964,93 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
         }
+
+
+        /* Multi-Step Form Styles */
+.progress-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.progress-step {
+    padding: 10px 20px;
+    background: var(--gray-200);
+    border-radius: 25px;
+    font-weight: 600;
+    color: var(--gray-700);
+    transition: all 0.3s ease;
+}
+
+.progress-step.active {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.back-button {
+    background: var(--gray-200);
+    color: var(--gray-700);
+    border: none;
+    padding: 16px 35px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.back-button:hover {
+    background: var(--gray-300);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .progress-bar {
+        gap: 10px;
+    }
+    
+    .progress-step {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
         
         /* Floating CTA - More Urgent */
         .floating-cta {
@@ -1975,96 +2062,115 @@
         </div>
         
         <div class="container" id="application-form">
-            <div class="form-container">
-                <h2>Apply for the 5-Hour Shop Owner Program</h2>
-                <p>Fill out the form below to begin your journey to greater freedom and growth.</p>
-                
-                <form action="https://formspree.io/f/xkgrkrwq" method="POST">
-                    <input type="hidden" name="_next" value="https://mangoelitecoaching.com/thanks.html">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="New Mango Elite Application">
-                    
-                    <div class="form-group">
-                        <label for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="owners">Owner(s) (if different or multiple)</label>
-                        <input type="text" id="owners" name="owners">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="shop-name">Shop Name *</label>
-                        <input type="text" id="shop-name" name="shop-name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="shop-address">Shop Address *</label>
-                        <textarea id="shop-address" name="shop-address" required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="lifts-bays">Number of Lifts/Bays *</label>
-                        <input type="number" id="lifts-bays" name="lifts-bays" min="1" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="cell-phone">Personal Cell Phone Number *</label>
-                        <input type="tel" id="cell-phone" name="cell-phone" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="personal-email">Personal Email Address *</label>
-                        <input type="email" id="personal-email" name="personal-email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="goals">Goals for the Program *</label>
-                        <textarea id="goals" name="goals" required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="previous-revenue">Previous Year's Revenue *</label>
-                        <input type="text" id="previous-revenue" name="previous-revenue" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="previous-profit">Previous Year's Profit *</label>
-                        <input type="text" id="previous-profit" name="previous-profit" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="availability">What days and times generally work best for your participation in our coaching cohort? This helps us plan, but is not a final commitment. (Select all that apply) *</label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="availability[]" value="Weekday mornings"> Weekday mornings
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="availability[]" value="Weekday afternoons"> Weekday afternoons
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="availability[]" value="Weekday evenings"> Weekday evenings
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="availability[]" value="Weekend availability"> Weekend availability
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="availability[]" value="Flexible/can adjust my schedule as needed"> Flexible/can adjust my schedule as needed
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="scheduling-notes">Anything else we should know about your scheduling preferences?</label>
-                        <textarea id="scheduling-notes" name="scheduling-notes"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-button">Submit Application</button>
-                </form>
-            </div>
+    <div class="form-container">
+        <h2>Apply for the 5-Hour Shop Owner Program</h2>
+        <p id="form-description">Start your application - we'll walk you through it step by step.</p>
+        
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-step active" data-step="1">Contact Info</div>
+            <div class="progress-step" data-step="2">Shop Details</div>
+            <div class="progress-step" data-step="3">Business Info</div>
         </div>
+        
+        <!-- Step 1: Contact Information -->
+        <form id="step-1" class="form-step active">
+            <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="cell-phone">Personal Cell Phone Number *</label>
+                <input type="tel" id="cell-phone" name="cell-phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="personal-email">Personal Email Address *</label>
+                <input type="email" id="personal-email" name="personal-email" required>
+            </div>
+            
+            <button type="button" class="submit-button" onclick="nextStep(1)">Continue →</button>
+        </form>
+        
+        <!-- Step 2: Shop Details -->
+        <form id="step-2" class="form-step">
+            <div class="form-group">
+                <label for="shop-name">Shop Name *</label>
+                <input type="text" id="shop-name" name="shop-name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="shop-address">Shop Address *</label>
+                <textarea id="shop-address" name="shop-address" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="lifts-bays">Number of Lifts/Bays *</label>
+                <input type="number" id="lifts-bays" name="lifts-bays" min="1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="owners">Owner(s) (if different or multiple)</label>
+                <input type="text" id="owners" name="owners">
+            </div>
+            
+            <div class="form-buttons">
+                <button type="button" class="back-button" onclick="prevStep(2)">← Back</button>
+                <button type="button" class="submit-button" onclick="nextStep(2)">Continue →</button>
+            </div>
+        </form>
+        
+        <!-- Step 3: Business Information -->
+        <form id="step-3" class="form-step">
+            <div class="form-group">
+                <label for="goals">Goals for the Program *</label>
+                <textarea id="goals" name="goals" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="previous-revenue">Previous Year's Revenue *</label>
+                <input type="text" id="previous-revenue" name="previous-revenue" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="previous-profit">Previous Year's Profit *</label>
+                <input type="text" id="previous-profit" name="previous-profit" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="availability">What days and times generally work best for your participation? *</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="availability[]" value="Weekday mornings"> Weekday mornings
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="availability[]" value="Weekday afternoons"> Weekday afternoons
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="availability[]" value="Weekday evenings"> Weekday evenings
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="availability[]" value="Weekend availability"> Weekend availability
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="availability[]" value="Flexible/can adjust my schedule as needed"> Flexible/can adjust my schedule as needed
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="scheduling-notes">Anything else we should know about your scheduling preferences?</label>
+                <textarea id="scheduling-notes" name="scheduling-notes"></textarea>
+            </div>
+            
+            <div class="form-buttons">
+                <button type="button" class="back-button" onclick="prevStep(3)">← Back</button>
+                <button type="submit" class="submit-button" onclick="submitFinalForm()">Submit Application</button>
+            </div>
+        </form>
     </div>
+</div>
     
     <footer>
         <div class="container">
@@ -2073,27 +2179,28 @@
     </footer>
 
     <script>
-        // Simple countdown timer
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const deadline = new Date('2025-07-01T23:59:59').getTime();
-            const timeLeft = deadline - now;
-            
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            
-            document.getElementById('countdown').innerHTML = `${days}d ${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            
-            if (timeLeft < 0) {
-                document.getElementById('countdown').innerHTML = "EXPIRED";
-            }
-        }
-        
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+// Simple countdown timer
+function updateCountdown() {
+    const now = new Date().getTime();
+    const deadline = new Date('2025-07-01T23:59:59').getTime();
+    const timeLeft = deadline - now;
+    
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+    document.getElementById('countdown').innerHTML = `${days}d ${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    
+    if (timeLeft < 0) {
+        document.getElementById('countdown').innerHTML = "EXPIRED";
+    }
+}
 
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Floating testimonial
 window.addEventListener('scroll', function() {
     const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
     if (scrollPercent > 15) {
@@ -2101,6 +2208,204 @@ window.addEventListener('scroll', function() {
     }
 });
 
-    </script>
+// Multi-step form functionality with performance fixes
+let currentStep = 1;
+let formData = {};
+let saveTimeout;
+let partialDataSent = false;
+
+// Auto-save with debouncing (FIXED)
+function setupAutoSave() {
+    const contactInputs = document.querySelectorAll('#step-1 input[required]');
+    
+    contactInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            formData[this.name] = this.value;
+            
+            // Clear previous timeout and set new one (debouncing)
+            clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(() => {
+                // Check if all required contact fields are filled
+                if (formData.name && formData['cell-phone'] && formData['personal-email'] && !partialDataSent) {
+                    sendPartialData();
+                }
+            }, 2000); // Wait 2 seconds after user stops typing
+        });
+    });
+}
+
+// Send partial contact data immediately (FIXED)
+function sendPartialData() {
+    if (partialDataSent) return; // Prevent duplicate sends
+    
+    const partialData = {
+        name: formData.name,
+        'cell-phone': formData['cell-phone'],
+        'personal-email': formData['personal-email'],
+        status: 'partial-application',
+        timestamp: new Date().toISOString()
+    };
+    
+    fetch('https://formspree.io/f/xkgrkrwq', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(partialData)
+    })
+    .then(response => {
+        if (response.ok) {
+            partialDataSent = true;
+            console.log('Contact info saved successfully');
+        }
+    })
+    .catch(err => {
+        console.log('Partial save failed:', err);
+        // Don't block user experience on save failure
+    });
+}
+
+function nextStep(step) {
+    // Validate current step
+    const currentForm = document.getElementById(`step-${step}`);
+    const requiredInputs = currentForm.querySelectorAll('input[required], textarea[required]');
+    let isValid = true;
+    
+    requiredInputs.forEach(input => {
+        if (!input.value.trim()) {
+            input.style.borderColor = 'red';
+            isValid = false;
+        } else {
+            input.style.borderColor = '';
+            formData[input.name] = input.value;
+        }
+    });
+    
+    if (!isValid) {
+        alert('Please fill in all required fields before continuing.');
+        return;
+    }
+    
+    // Save non-required fields too
+    const allInputs = currentForm.querySelectorAll('input, textarea');
+    allInputs.forEach(input => {
+        if (input.value) {
+            formData[input.name] = input.value;
+        }
+    });
+    
+    // Hide current step
+    document.getElementById(`step-${step}`).classList.remove('active');
+    document.querySelector(`.progress-step[data-step="${step}"]`).classList.remove('active');
+    
+    // Show next step
+    currentStep = step + 1;
+    document.getElementById(`step-${currentStep}`).classList.add('active');
+    document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('active');
+    
+    // Update description
+    const descriptions = {
+        2: "Tell us about your shop",
+        3: "Share your business goals and availability"
+    };
+    document.getElementById('form-description').textContent = descriptions[currentStep];
+}
+
+function prevStep(step) {
+    // Save current step data before going back
+    const currentForm = document.getElementById(`step-${step}`);
+    const allInputs = currentForm.querySelectorAll('input, textarea');
+    allInputs.forEach(input => {
+        if (input.value) {
+            formData[input.name] = input.value;
+        }
+    });
+    
+    // Hide current step
+    document.getElementById(`step-${step}`).classList.remove('active');
+    document.querySelector(`.progress-step[data-step="${step}"]`).classList.remove('active');
+    
+    // Show previous step
+    currentStep = step - 1;
+    document.getElementById(`step-${currentStep}`).classList.add('active');
+    document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('active');
+    
+    // Update description
+    const descriptions = {
+        1: "Start your application - we'll walk you through it step by step.",
+        2: "Tell us about your shop"
+    };
+    document.getElementById('form-description').textContent = descriptions[currentStep];
+}
+
+function submitFinalForm() {
+    // Validate final step
+    const finalForm = document.getElementById('step-3');
+    const requiredInputs = finalForm.querySelectorAll('input[required], textarea[required]');
+    let isValid = true;
+    
+    requiredInputs.forEach(input => {
+        if (!input.value.trim()) {
+            input.style.borderColor = 'red';
+            isValid = false;
+        } else {
+            input.style.borderColor = '';
+        }
+    });
+    
+    // Check if at least one availability option is selected
+    const checkboxes = document.querySelectorAll('input[name="availability[]"]:checked');
+    if (checkboxes.length === 0) {
+        alert('Please select at least one availability option.');
+        return;
+    }
+    
+    if (!isValid) {
+        alert('Please fill in all required fields before submitting.');
+        return;
+    }
+    
+    // Collect all form data (IMPROVED)
+    const allInputs = document.querySelectorAll('input, textarea, select');
+    const finalData = {...formData}; // Start with saved data
+    
+    allInputs.forEach(input => {
+        if (input.type === 'checkbox') {
+            if (!finalData[input.name]) finalData[input.name] = [];
+            if (input.checked) finalData[input.name].push(input.value);
+        } else if (input.value) {
+            finalData[input.name] = input.value;
+        }
+    });
+    
+    finalData.status = 'complete-application';
+    finalData.timestamp = new Date().toISOString();
+    
+    // Submit final form
+    fetch('https://formspree.io/f/xkgrkrwq', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(finalData)
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.href = 'https://mangoelitecoaching.com/thanks.html';
+        } else {
+            alert('There was an error submitting your application. Please try again.');
+        }
+    })
+    .catch(err => {
+        console.error('Form submission error:', err);
+        alert('There was an error submitting your application. Please try again.');
+    });
+}
+
+// Initialize auto-save when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    setupAutoSave();
+});
+</script>
 </body>
 </html>
