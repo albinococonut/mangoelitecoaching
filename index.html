@@ -1401,7 +1401,7 @@
 .mango-floating-testimonial {
     position: fixed;
     right: 30px;
-    top: 22%;
+    top: 120px;
     width: 420px;
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid var(--accent);
@@ -1427,8 +1427,33 @@
 .testimonial-cta { width: 100%; background: var(--gradient-primary); color: white; border: none; padding: 16px; border-radius: 8px; font-weight: 700; cursor: pointer; }
 
 @media (max-width: 768px) {
-    .mango-floating-testimonial { bottom: 20px; left: 20px; right: 20px; width: auto; top: auto; transform: translateY(100%); }
-    .mango-floating-testimonial.show { transform: translateY(0); }
+    .mango-floating-testimonial { 
+        bottom: 20px; 
+        left: 20px; 
+        right: 20px; 
+        width: auto; 
+        top: auto; 
+        transform: translateY(100%); 
+    }
+    .mango-floating-testimonial.show { 
+        transform: translateY(0); 
+    }
+    
+    /* Hide floating CTA on mobile */
+    .floating-cta {
+        display: none;
+    }
+    
+    /* Enhance testimonial CTA to replace floating button */
+    .testimonial-cta {
+        font-size: 1.2rem;
+        padding: 20px;
+        margin-top: 25px;
+        animation: urgent-bounce 2s infinite;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: var(--gradient-primary);
+    }
 }
 
         
@@ -1443,7 +1468,7 @@
     </div>
     <div class="testimonial-body">"They didn't just throw theory at us—they rolled up their sleeves and helped us make smart, fast changes that moved the needle. Super sharp team, real-world advice, and crazy fast ROI. If you're looking for actual results, not just advice, these guys deliver."</div>
     <div style="text-align: right; margin: 20px 0; color: var(--gray-700); font-size: 0.9rem;">— Alex Kahn, Rio Grande Automotive</div>
-    <button class="testimonial-cta">📹 Watch Video</button>
+    <button class="testimonial-cta">🚀 Apply Now</button>
 </div>
 
     <!-- Urgency Bar -->
