@@ -1513,6 +1513,28 @@
 .testimonial-amount { font-size: 2.2rem; font-weight: 900; }
 .testimonial-body { color: var(--gray-700); margin-bottom: 20px; line-height: 1.6; }
 .testimonial-cta { width: 100%; background: var(--gradient-primary); color: white; border: none; padding: 16px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+.testimonial-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--gray-700);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.testimonial-close:hover {
+    background: var(--gray-200);
+    color: var(--accent);
+}
 
 @media (max-width: 768px) {
     .mango-floating-testimonial { 
@@ -1549,6 +1571,7 @@
 </head>
 <body>
 <div class="mango-floating-testimonial" id="testimonial">
+    <button class="testimonial-close" onclick="closeTestimonial()">×</button>
     <div class="testimonial-opener">"Working with Mango Elite Coaching was one of the best business decisions I've made."</div>
     <div class="testimonial-highlight-box">
         <div class="testimonial-amount">💰 $220,000</div>
@@ -2208,6 +2231,9 @@ window.addEventListener('scroll', function() {
         document.getElementById('testimonial').classList.add('show');
     }
 });
+        function closeTestimonial() {
+    document.getElementById('testimonial').style.display = 'none';
+}
 
 // Multi-step form functionality with performance fixes
 let currentStep = 1;
