@@ -2367,66 +2367,36 @@ function prevStep(step) {
 
 function submitFinalForm() {
     // Validate final step
-    const finalForm = document.getElementById('step-3');
-    const requiredInputs = finalForm.querySelectorAll('input[required], textarea[required]');
-    let isValid = true;
-    
-    requiredInputs.forEach(input => {
-        if (!input.value.trim()) {
-            input.style.borderColor = 'red';
-            isValid = false;
-        } else {
-            input.style.borderColor = '';
-        }
-    });
-    
-    // Check if at least one availability option is selected
     const checkboxes = document.querySelectorAll('input[name="availability[]"]:checked');
     if (checkboxes.length === 0) {
         alert('Please select at least one availability option.');
         return;
     }
     
-    if (!isValid) {
-        alert('Please fill in all required fields before submitting.');
-        return;
-    }
+    // Use FormData to collect everything automatically
+    const formData = new FormData();
     
-    // Collect all form data (IMPROVED)
-    const allInputs = document.querySelectorAll('input, textarea, select');
-    const finalData = {...formData}; // Start with saved data
-    
-    allInputs.forEach(input => {
-        if (input.type === 'checkbox') {
-            if (!finalData[input.name]) finalData[input.name] = [];
-            if (input.checked) finalData[input.name].push(input.value);
-        } else if (input.value) {
-            finalData[input.name] = input.value;
+    // Add all form inputs
+    document.querySelectorAll('input, textarea').forEach(input => {
+        if (input.type === 'checkbox' && input.checked) {
+            formData.append(input.name, input.value);
+        } else if (input.type !== 'checkbox' && input.value) {
+            formData.append(input.name, input.value);
         }
     });
     
-    finalData.status = 'complete-application';
-    finalData.timestamp = new Date().toISOString();
+    formData.append('status', 'complete-application');
+    formData.append('timestamp', new Date().toISOString());
     
-    // Submit final form
+    // Submit
     fetch('https://formspree.io/f/xkgrkrwq', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(finalData)
+        body: formData // Let FormData handle the encoding
     })
-    .then(response => {
-        if (response.ok) {
-            window.location.href = 'https://mangoelitecoaching.com/thanks.html';
-        } else {
-            alert('There was an error submitting your application. Please try again.');
-        }
-    })
-    .catch(err => {
-        console.error('Form submission error:', err);
-        alert('There was an error submitting your application. Please try again.');
-    });
+    .then(response => response.ok ? 
+        window.location.href = 'https://mangoelitecoaching.com/thanks.html' :
+        Promise.reject('Failed'))
+    .catch(() => alert('Error submitting. Please try again.'));
 }
 
 // Initialize auto-save when page loads
