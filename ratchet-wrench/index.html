@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Your Shop - Mango Elite Coaching | Ratchet & Wrench Conference</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            margin: 20px 0;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo img {
+            width: 120px;
+            height: auto;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        
+        .tagline {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ff0066 0%, #cc0052 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .stat {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #ff0066;
+        }
+        
+        .required {
+            color: #e74c3c;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #ff0066 0%, #cc0052 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .benefits {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .benefits h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+        
+        .benefit-icon {
+            color: #ff0066;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .testimonial {
+            background: #fff3f5;
+            border-left: 4px solid #ff0066;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            text-align: right;
+            color: #666;
+        }
+        
+        .bonus-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+        
+        .bonus-box h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #666;
+            padding: 20px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="logo">
+                <img src="200pink.png" alt="Mango Elite Coaching" style="width: 120px; height: auto;">
+                <p style="color: #ff0066; font-weight: 600; margin-top: 10px;">ELITE COACHING</p>
+            </div>
+            
+            <h1>From Single Shop to Multi-Million Dollar Empire</h1>
+            <p class="tagline">Get Your Conference Handout Package</p>
+            
+            <div class="highlight-box">
+                <h2>Transform Your Shop in 30 Days</h2>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">$220K</span>
+                        <span class="stat-label">Added in 7 Weeks</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50%+</span>
+                        <span class="stat-label">Year-Over-Year Growth</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">≤5 hrs</span>
+                        <span class="stat-label">Working Per Week</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Exclusive Spots Only</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="benefits">
+                <h3>📋 Your Conference Package Includes:</h3>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span><strong>Stage Assessment Worksheet</strong> - Identify exactly where your shop is now</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span><strong>30-Day Basketball Challenge</strong> - Transform your operations in one month</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span><strong>Exclusive Coaching Program Details</strong> - Limited to 12 owner-operators</span>
+                </div>
+            </div>
+            
+            <form id="conferenceForm">
+                <div class="form-group">
+                    <label for="name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="shop">Shop Name</label>
+                    <input type="text" id="shop" name="shop">
+                </div>
+                
+                <div class="form-group">
+                    <label for="locations">Location(s)</label>
+                    <input type="text" id="locations" name="locations" placeholder="City, State">
+                </div>
+                
+                <div class="form-group">
+                    <label for="revenue">YTD Revenue (Approximate)</label>
+                    <select id="revenue" name="revenue">
+                        <option value="">Select Range</option>
+                        <option value="Under $500K">Under $500K</option>
+                        <option value="$500K-$1M">$500K - $1M</option>
+                        <option value="$1M-$2M">$1M - $2M</option>
+                        <option value="$2M-$5M">$2M - $5M</option>
+                        <option value="Over $5M">Over $5M</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-btn">Get Your Handout Package →</button>
+            </form>
+            
+            <div class="testimonial">
+                <p class="testimonial-text">"Working with Mango Elite Coaching was one of the best business decisions I've made. They didn't just throw theory at us—they rolled up their sleeves and helped us make smart, fast changes that moved the needle."</p>
+                <p class="testimonial-author">— Alex Kahn, Rio Grande Automotive</p>
+            </div>
+            
+            <div class="bonus-box">
+                <h3>🎯 CONFERENCE EXCLUSIVE BONUS</h3>
+                <p><strong>Apply today and we'll pay for you to visit one of our Albuquerque shops</strong> to see the Basketball Method and 5-Point Control System in action.</p>
+                <p style="margin-top: 10px; font-size: 14px;">*First 5 U.S. applicants only</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Questions? Text Kevin: 505-441-4779</p>
+            <p>© 2025 Mango Elite Coaching | MangoEliteCoaching.com</p>
+        </div>
+    </div>
+    
+    <!-- Hidden div to hold handout content after form submission -->
+    <div id="handoutContent" style="display: none;">
+        <div class="container">
+            <div class="card">
+                <h2 style="text-align: center; color: #ff0066; margin-bottom: 20px;">Success! Your Handouts Are Ready</h2>
+                
+                <div style="background: #d4edda; border: 1px solid #c3e6cb; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                    <p style="color: #155724; text-align: center; font-weight: bold;">✅ Thank you! Your handouts have been sent to your email.</p>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h3>📧 Check Your Email</h3>
+                    <p>We've sent your complete handout package including:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Stage Assessment Worksheet</li>
+                        <li>30-Day Basketball Challenge Commitment Card</li>
+                        <li>Mango Elite Coaching Program Overview</li>
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <h3>Ready to Transform Your Shop?</h3>
+                    <p style="margin: 15px 0;">Join our exclusive cohort of 12 owner-operators</p>
+                    <a href="https://mangoelitecoaching.com" style="display: inline-block; background: linear-gradient(135deg, #ff0066 0%, #cc0052 100%); color: white; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold;">Visit MangoEliteCoaching.com</a>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <p>Questions? Text Kevin: 505-441-4779</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('conferenceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Add metadata
+            data.source = 'Ratchet & Wrench Conference';
+            data.timestamp = new Date().toISOString();
+            
+            // Here you would normally send to your backend
+            // For demonstration, we'll show success message
+            console.log('Form data:', data);
+            
+            // Hide form and show success message
+            document.querySelector('.card').style.display = 'none';
+            document.getElementById('handoutContent').style.display = 'block';
+            
+            // In production, you would:
+            // 1. Send data to your email service (SendGrid, Mailchimp, etc.)
+            // 2. Send handouts via email
+            // 3. Add to CRM
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        });
+    </script>
+</body>
+</html>
