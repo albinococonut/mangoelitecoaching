@@ -378,21 +378,30 @@
             data.source = 'Ratchet & Wrench Conference';
             data.timestamp = new Date().toISOString();
             
-            // Here you would normally send to your backend
-            // For demonstration, we'll show success message
-            console.log('Form data:', data);
-            
-            // Hide form and show success message
-            document.querySelector('.card').style.display = 'none';
-            document.getElementById('handoutContent').style.display = 'block';
-            
-            // In production, you would:
-            // 1. Send data to your email service (SendGrid, Mailchimp, etc.)
-            // 2. Send handouts via email
-            // 3. Add to CRM
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
+            // Send to Formspree
+            fetch('https://formspree.io/f/xkgrkrwq', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Hide form and show success message
+                    document.querySelector('.card').style.display = 'none';
+                    document.getElementById('handoutContent').style.display = 'block';
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                } else {
+                    alert('There was an error submitting the form. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting the form. Please try again.');
+            });
         });
     </script>
 </body>
