@@ -1565,23 +1565,205 @@
         background: var(--gradient-primary);
     }
 }
+/* Client Results Section */
+.client-results {
+    background: var(--gray-100);
+    padding: 80px 0;
+}
 
+.client-results-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.client-results-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--gray-700);
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.client-testimonial {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 5px solid var(--accent);
+}
+
+.client-stat-banner {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.client-stat {
+    text-align: center;
+}
+
+.client-stat-number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.client-stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.client-stat-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.client-testimonial-content {
+    padding: 40px 45px;
+}
+
+.client-testimonial-headline {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.client-testimonial-content p {
+    margin-bottom: 18px;
+    line-height: 1.7;
+    color: var(--gray-700);
+    font-size: 1.05rem;
+}
+
+.client-pullquote {
+    background: rgba(255, 0, 102, 0.05);
+    border-left: 4px solid var(--accent);
+    padding: 22px 25px;
+    margin: 25px 0;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--dark);
+    line-height: 1.6;
+    border-radius: 0 10px 10px 0;
+}
+
+.client-attribution {
+    text-align: right;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 25px;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+    .client-stat-banner {
+        flex-direction: column;
+        gap: 25px;
+        padding: 25px;
+    }
+    .client-stat-divider {
+        width: 60px;
+        height: 1px;
+    }
+    .client-testimonial-content {
+        padding: 30px 25px;
+    }
+    .client-testimonial-headline {
+        font-size: 1.3rem;
+    }
+    .client-stat-number {
+        font-size: 1.8rem;
+    }
+}
+
+/* Floating Testimonial Slides */
+.testimonial-slide {
+    display: none;
+    animation: testFadeIn 0.5s ease;
+}
+.testimonial-slide.active {
+    display: block;
+}
+@keyframes testFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 5px 0 15px;
+}
+.testimonial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gray-300);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.testimonial-dot.active {
+    background: var(--accent);
+    width: 24px;
+    border-radius: 4px;
+}
         
     </style>
 </head>
 <body>
 <div class="mango-floating-testimonial" id="testimonial">
     <button class="testimonial-close" onclick="closeTestimonial()">×</button>
-    <div class="testimonial-opener">"Working with Mango Elite Coaching was one of the best business decisions I've made."</div>
-    <div class="testimonial-highlight-box">
-        <div class="testimonial-amount">💰 $220,000</div>
-        <div>added in 7 weeks</div>
+    
+    <!-- Slide 1: Alex -->
+    <div class="testimonial-slide active" data-slide="0">
+        <div class="testimonial-opener">"Working with Mango Elite Coaching was one of the best business decisions I've made."</div>
+        <div class="testimonial-highlight-box">
+            <div class="testimonial-amount">💰 $220,000</div>
+            <div>added in 7 weeks</div>
+        </div>
+        <div class="testimonial-body">"They didn't just throw theory at us—they rolled up their sleeves and helped us make smart, fast changes that moved the needle. Super sharp team, real-world advice, and crazy fast ROI. If you're looking for actual results, not just advice, these guys deliver."</div>
+        <div style="text-align: right; margin: 20px 0; color: var(--gray-700); font-size: 0.9rem;">— Alex</div>
     </div>
-    <div class="testimonial-body">"They didn't just throw theory at us—they rolled up their sleeves and helped us make smart, fast changes that moved the needle. Super sharp team, real-world advice, and crazy fast ROI. If you're looking for actual results, not just advice, these guys deliver."</div>
-    <div style="text-align: right; margin: 20px 0; color: var(--gray-700); font-size: 0.9rem;">— Alex</div>
-    <button class="testimonial-cta">🚀 Apply Now</button>
+    
+    <!-- Slide 2: Greg & Andrea -->
+    <div class="testimonial-slide" data-slide="1">
+        <div class="testimonial-opener">"Within a few months, we crossed $100K in monthly sales."</div>
+        <div class="testimonial-highlight-box">
+            <div class="testimonial-amount">📈 $59K → $100K+</div>
+            <div>per month + 80 → 140 cars</div>
+        </div>
+        <div class="testimonial-body">"What made the biggest difference is that nothing they taught felt scripted or unrealistic. It was real world advice from people who actually run shops and understand what it's like day to day."</div>
+        <div style="text-align: right; margin: 20px 0; color: var(--gray-700); font-size: 0.9rem;">— Greg & Andrea, JMAC</div>
+    </div>
+    
+    <div class="testimonial-dots">
+        <span class="testimonial-dot active" data-target="0"></span>
+        <span class="testimonial-dot" data-target="1"></span>
+    </div>
+    
+    <button class="testimonial-cta" onclick="document.getElementById('application-form').scrollIntoView({behavior: 'smooth'})">🚀 Apply Now</button>
 </div>
-
          <!-- Urgency Bar -->
         <div class="urgency-bar">
             🔥 Limited Enrollment - We Work With Select Clients to Ensure Results
@@ -1883,7 +2065,43 @@
                 </div>
             </div>
         </div>
+        <!-- CLIENT RESULTS SECTION -->
+<div class="client-results">
+    <div class="container">
+        <h2 class="client-results-title">What Shop Owners Are Saying</h2>
+        <p class="client-results-subtitle">Real results from real clients implementing The Mango Elite System</p>
         
+        <div class="client-testimonial">
+            <div class="client-stat-banner">
+                <div class="client-stat">
+                    <span class="client-stat-number">$59K → $100K+</span>
+                    <span class="client-stat-label">Monthly Revenue</span>
+                </div>
+                <div class="client-stat-divider"></div>
+                <div class="client-stat">
+                    <span class="client-stat-number">80 → 140</span>
+                    <span class="client-stat-label">Cars Per Month</span>
+                </div>
+            </div>
+            
+            <div class="client-testimonial-content">
+                <h3 class="client-testimonial-headline">"Within a few months, we crossed $100K in monthly sales"</h3>
+                
+                <p>Before working with Mango Elite Coaching, we were doing around $59K a month and averaging about 80 cars. We knew we had potential, but it felt like we were constantly putting out fires and trying to keep up.</p>
+                
+                <p>After working with Jesse and Brian and implementing their systems, things started to click. Within a few months, we crossed $100K in monthly sales and grew to over 140 cars in a month. But more importantly, <strong>the shop just runs better now</strong>. Our team communicates better, we're more organized, and there's a level of structure and accountability we didn't have before.</p>
+                
+                <div class="client-pullquote">
+                    "What made the biggest difference is that nothing they taught felt scripted or unrealistic. It was real world advice from people who actually run shops and understand what it's like day to day."
+                </div>
+                
+                <p>Brian and Jesse truly care about the people they work with, and we're really grateful for how they've helped us grow.</p>
+                
+                <div class="client-attribution">— Greg & Andrea, JMAC</div>
+            </div>
+        </div>
+    </div>
+</div>
         <!-- FOUNDERS SECTION - Moved After Proof -->
         <div class="founders">
             <div class="container">
@@ -2152,7 +2370,43 @@ let currentStep = 1;
 let formData = {};
 let saveTimeout;
 let partialDataSent = false;
+// Testimonial rotation
+let currentTestimonial = 0;
+let testimonialInterval;
 
+function showTestimonial(index) {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    
+    slides[currentTestimonial].classList.remove('active');
+    dots[currentTestimonial].classList.remove('active');
+    
+    currentTestimonial = index;
+    
+    slides[currentTestimonial].classList.add('active');
+    dots[currentTestimonial].classList.add('active');
+}
+
+function rotateTestimonials() {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const next = (currentTestimonial + 1) % slides.length;
+    showTestimonial(next);
+}
+
+function startTestimonialRotation() {
+    testimonialInterval = setInterval(rotateTestimonials, 8000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.testimonial-dot').forEach((dot) => {
+        dot.addEventListener('click', function() {
+            showTestimonial(parseInt(this.dataset.target));
+            clearInterval(testimonialInterval);
+            startTestimonialRotation();
+        });
+    });
+    startTestimonialRotation();
+});
 // Auto-save with debouncing (FIXED)
 function setupAutoSave() {
     const contactInputs = document.querySelectorAll('#step-1 input[required]');
